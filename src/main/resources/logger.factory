@@ -1,0 +1,6 @@
+{
+    "factoryClass": "zxf.java.pattern.factorymethod.designpattern.impl.a.ALogFactory",
+    "config":{
+        "key1": "value1"
+    }
+}
