@@ -1,0 +1,6 @@
+{
+    "factoryClass": "zxf.java.pattern.factorymethod.logger.b.BLogFactory",
+    "config":{
+        "key1": "value1"
+    }
+}

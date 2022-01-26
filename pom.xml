@@ -5,7 +5,15 @@
 
     <groupId>zxf</groupId>
     <artifactId>zxf-java-pattern</artifactId>
+    <packaging>pom</packaging>
     <version>0.0.1-SNAPSHOT</version>
+
+    <modules>
+        <module>factorymethod</module>
+        <module>factorymethod-logger</module>
+        <module>factorymethod-logger-a</module>
+        <module>factorymethod-logger-b</module>
+    </modules>
 
     <dependencies>
         <dependency>
