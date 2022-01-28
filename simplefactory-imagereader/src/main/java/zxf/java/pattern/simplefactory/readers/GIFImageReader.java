@@ -1,6 +1,6 @@
-package zxf.java.pattern.factorymethod.simplefactory.readers;
+package zxf.java.pattern.simplefactory.readers;
 
-import zxf.java.pattern.factorymethod.simplefactory.ImageReader;
+import zxf.java.pattern.simplefactory.ImageReader;
 
 import java.io.InputStream;
 

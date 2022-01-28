@@ -13,6 +13,7 @@
         <module>factorymethod-logger</module>
         <module>factorymethod-logger-a</module>
         <module>factorymethod-logger-b</module>
+        <module>simplefactory-imagereader</module>
     </modules>
 
     <dependencies>

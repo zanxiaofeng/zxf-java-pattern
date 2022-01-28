@@ -1,8 +1,8 @@
-package zxf.java.pattern.factorymethod.simplefactory;
+package zxf.java.pattern.simplefactory;
 
-import zxf.java.pattern.factorymethod.simplefactory.readers.GIFImageReader;
-import zxf.java.pattern.factorymethod.simplefactory.readers.JPEGImageReader;
-import zxf.java.pattern.factorymethod.simplefactory.readers.TIFFImageReader;
+import zxf.java.pattern.simplefactory.readers.GIFImageReader;
+import zxf.java.pattern.simplefactory.readers.JPEGImageReader;
+import zxf.java.pattern.simplefactory.readers.TIFFImageReader;
 
 import java.io.InputStream;
 
