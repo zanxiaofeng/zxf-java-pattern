@@ -14,6 +14,7 @@
         <module>factorymethod-logger-a</module>
         <module>factorymethod-logger-b</module>
         <module>simplefactory-imagereader</module>
+        <module>templatemethod</module>
     </modules>
 
     <dependencies>
