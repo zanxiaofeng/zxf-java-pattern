@@ -2,7 +2,7 @@ package zxf.java.pattern.factorymethod.logger;
 
 import java.util.Map;
 
-public class FactoryConfig {
+class FactoryConfig {
     private String factoryClass;
     private Map<String, String> config;
 

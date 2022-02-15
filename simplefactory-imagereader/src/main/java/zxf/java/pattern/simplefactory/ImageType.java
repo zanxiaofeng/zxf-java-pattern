@@ -1,5 +1,5 @@
 package zxf.java.pattern.simplefactory;
 
-public enum ImageType {
+enum ImageType {
     GIF, JPEG, TIFF;
 }
