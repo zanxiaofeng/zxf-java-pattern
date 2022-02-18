@@ -15,6 +15,8 @@
         <module>factorymethod-logger-b</module>
         <module>simplefactory-imagereader</module>
         <module>templatemethod</module>
+        <module>functional-base</module>
+        <module>decorator</module>
     </modules>
 
     <dependencies>
