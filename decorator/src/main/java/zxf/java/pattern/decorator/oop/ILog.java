@@ -3,7 +3,7 @@ package zxf.java.pattern.decorator.oop;
 import java.util.Objects;
 
 public interface ILog {
-    void log(Integer level, String message) throws Exception;
+    void log(LogLevel level, String message) throws Exception;
 
     static ILog create(ILog finalLog, LogDecorator... logDecorators) {
         Objects.requireNonNull(finalLog);

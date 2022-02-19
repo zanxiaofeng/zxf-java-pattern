@@ -11,23 +11,21 @@ import java.nio.file.Paths;
 public class ILogTests {
     @Test
     public void use_case1() throws Exception {
-        ILog iLog = ILog.create(new ConsoleLog(), new LevelFilterLogDecorator(3),
+        ILog iLog = ILog.create(new ConsoleLog(), new LevelFilterLogDecorator(LogLevel.WARN),
                 new ThreadLogDecorator(), new TimestampLogDecorator());
-        iLog.log(1, "oop log message with level 1");
-        iLog.log(2, "oop log message with level 2");
-        iLog.log(3, "oop log message with level 3");
-        iLog.log(4, "oop log message with level 4");
-        iLog.log(5, "oop log message with level 5");
+        iLog.log(LogLevel.DEBUG, "oop log message with level DEBUG");
+        iLog.log(LogLevel.INFO, "oop log message with level INFO");
+        iLog.log(LogLevel.WARN, "oop log message with level WARN");
+        iLog.log(LogLevel.ERROR, "oop log message with level ERROR");
     }
 
     @Test
     public void use_case2() throws Exception {
-        ILog iLog = ILog.create(new FileLog(Paths.get("./test.log")), new LevelFilterLogDecorator(3),
+        ILog iLog = ILog.create(new FileLog(Paths.get("./test.log")), new LevelFilterLogDecorator(LogLevel.WARN),
                 new ThreadLogDecorator(), new TimestampLogDecorator(), new ConsoleLogDecorator());
-        iLog.log(1, "oop log message with level 1");
-        iLog.log(2, "oop log message with level 2");
-        iLog.log(3, "oop log message with level 3");
-        iLog.log(4, "oop log message with level 4");
-        iLog.log(5, "oop log message with level 5");
+        iLog.log(LogLevel.DEBUG, "oop log message with level DEBUG");
+        iLog.log(LogLevel.INFO, "oop log message with level INFO");
+        iLog.log(LogLevel.WARN, "oop log message with level WARN");
+        iLog.log(LogLevel.ERROR, "oop log message with level ERROR");
     }
 }

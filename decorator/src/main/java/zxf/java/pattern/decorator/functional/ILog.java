@@ -9,7 +9,7 @@ import static java.nio.file.StandardOpenOption.APPEND;
 import static java.nio.file.StandardOpenOption.CREATE;
 
 public interface ILog {
-    void log(Integer level, String message) throws Exception;
+    void log(LogLevel level, String message) throws Exception;
 
     static ILog create(ILog finalLog, ILogDecorator... logDecorators) {
         Objects.requireNonNull(finalLog);
@@ -24,7 +24,7 @@ public interface ILog {
         return returnLog;
     }
 
-    static void consoleLog(Integer level, String message) throws Exception {
+    static void consoleLog(LogLevel level, String message) throws Exception {
         System.out.println(message);
     }
 

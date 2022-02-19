@@ -12,7 +12,7 @@ public class LogDecorator implements ILog {
     }
 
     @Override
-    public void log(Integer level, String message) throws Exception {
+    public void log(LogLevel level, String message) throws Exception {
         this.innerLog.log(level, message);
     }
 }

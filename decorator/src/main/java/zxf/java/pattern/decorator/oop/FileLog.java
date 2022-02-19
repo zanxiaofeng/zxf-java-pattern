@@ -15,7 +15,7 @@ public class FileLog implements ILog {
     }
 
     @Override
-    public void log(Integer level, String message) throws Exception {
+    public void log(LogLevel level, String message) throws Exception {
         Files.write(logFile, (message + "\n").getBytes(StandardCharsets.UTF_8), CREATE, APPEND);
     }
 }

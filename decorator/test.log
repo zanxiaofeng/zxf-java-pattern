@@ -1,6 +1,4 @@
-2022-02-19T21:26:58.681755 [Thread: main] [Level: 1] functional log message with level 1
-2022-02-19T21:26:58.704053 [Thread: main] [Level: 2] functional log message with level 2
-2022-02-19T21:26:58.704668 [Thread: main] [Level: 3] functional log message with level 3
-2022-02-19T21:27:21.677582 [Thread: main] [Level: 1] oop log message with level 1
-2022-02-19T21:27:21.700494 [Thread: main] [Level: 2] oop log message with level 2
-2022-02-19T21:27:21.701158 [Thread: main] [Level: 3] oop log message with level 3
+2022-02-19T21:43:16.482807 [Thread: main] [WARN] oop log message with level WARN
+2022-02-19T21:43:16.505512 [Thread: main] [ERROR] oop log message with level ERROR
+2022-02-19T21:47:55.091940 [Thread: main] [WARN] functional log message with level WARN
+2022-02-19T21:47:55.115165 [Thread: main] [ERROR] functional log message with level ERROR
