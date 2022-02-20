@@ -1,22 +1,23 @@
 package zxf.java.functional;
 
+import zxf.java.functional.checked.CheckedBiFunction;
+import zxf.java.functional.checked.CheckedFunction;
+import zxf.java.functional.checked.CheckedTriFunction;
 import zxf.java.functional.tree.Mapped2LTree;
 import zxf.java.functional.tree.Mapped3LTree;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.BiFunction;
 import java.util.function.BiPredicate;
-import java.util.function.Function;
 import java.util.function.Predicate;
 
 public class Caching {
-    public static <T, R> Function<T, R> cachedFunction(Function<T, R> realFunction) {
+    public static <T, R> CheckedFunction<T, R> cachedFunction(CheckedFunction<T, R> realFunction) {
         final Map<T, R> cache = new HashMap<>();
         return cachedFunction(cache, realFunction);
     }
 
-    public static <T, R> Function<T, R> cachedFunction(Map<T, R> cache, Function<T, R> realFunction) {
+    public static <T, R> CheckedFunction<T, R> cachedFunction(Map<T, R> cache, CheckedFunction<T, R> realFunction) {
         return (t) -> {
             if (cache.containsKey(t)) {
                 return cache.get(t);
@@ -27,12 +28,12 @@ public class Caching {
         };
     }
 
-    public static <T, U, R> BiFunction<T, U, R> cachedFunction(BiFunction<T, U, R> realFunction) {
+    public static <T, U, R> CheckedBiFunction<T, U, R> cachedFunction(CheckedBiFunction<T, U, R> realFunction) {
         final Mapped2LTree<T, U, R> cache = new Mapped2LTree();
         return cachedFunction(cache, realFunction);
     }
 
-    public static <T, U, R> BiFunction<T, U, R> cachedFunction(Mapped2LTree<T, U, R> cache, BiFunction<T, U, R> realFunction) {
+    public static <T, U, R> CheckedBiFunction<T, U, R> cachedFunction(Mapped2LTree<T, U, R> cache, CheckedBiFunction<T, U, R> realFunction) {
         return (t, u) -> {
             if (cache.contains(t, u)) {
                 return cache.get(t, u);
@@ -44,12 +45,12 @@ public class Caching {
         };
     }
 
-    public static <T, U, P, R> TriFunction<T, U, P, R> cachedFunction(TriFunction<T, U, P, R> realFunction) {
+    public static <T, U, P, R> CheckedTriFunction<T, U, P, R> cachedFunction(CheckedTriFunction<T, U, P, R> realFunction) {
         final Mapped3LTree<T, U, P, R> cache = new Mapped3LTree();
         return cachedFunction(cache, realFunction);
     }
 
-    public static <T, U, P, R> TriFunction<T, U, P, R> cachedFunction(Mapped3LTree<T, U, P, R> cache, TriFunction<T, U, P, R> realFunction) {
+    public static <T, U, P, R> CheckedTriFunction<T, U, P, R> cachedFunction(Mapped3LTree<T, U, P, R> cache, CheckedTriFunction<T, U, P, R> realFunction) {
         return (t, u, p) -> {
             if (cache.contains(t, u, p)) {
                 return cache.get(t, u, p);

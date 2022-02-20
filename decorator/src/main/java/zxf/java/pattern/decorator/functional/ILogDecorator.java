@@ -8,9 +8,9 @@ public interface ILogDecorator {
     void log(ILog iLog, LogLevel level, String message) throws Exception;
 
     default ILog decorate(ILog iLog) {
-        return ((level, message) -> log(iLog, level, message));
+        //return ((level, message) -> log(iLog, level, message));
         // 函数值的Throws与函数类型的Throws不兼容，不能赋值
-        // return Currying.curryingConsumer(iLog, this::log);
+        return (ILog) Currying.curryingConsumer(iLog, this::log);
     }
 
     static void console(ILog iLog, LogLevel level, String message) throws Exception {
