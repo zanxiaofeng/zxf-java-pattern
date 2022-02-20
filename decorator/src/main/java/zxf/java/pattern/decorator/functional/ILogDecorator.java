@@ -1,5 +1,7 @@
 package zxf.java.pattern.decorator.functional;
 
+import zxf.java.functional.Currying;
+
 import java.time.LocalDateTime;
 
 public interface ILogDecorator {
@@ -7,6 +9,8 @@ public interface ILogDecorator {
 
     default ILog decorate(ILog iLog) {
         return ((level, message) -> log(iLog, level, message));
+        //Throws Exception会导致函数契约不匹配，从而影响Ｊava中函数的相互转换.
+        //return Currying.curryingConsumer(iLog, this::log);
     }
 
     static void console(ILog iLog, LogLevel level, String message) throws Exception {
