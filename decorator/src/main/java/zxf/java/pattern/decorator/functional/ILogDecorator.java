@@ -9,8 +9,8 @@ public interface ILogDecorator {
 
     default ILog decorate(ILog iLog) {
         return ((level, message) -> log(iLog, level, message));
-        //Throws Exception会导致函数契约不匹配，从而影响Ｊava中函数的相互转换.
-        //return Currying.curryingConsumer(iLog, this::log);
+        // 函数值的Throws与函数类型的Throws不兼容，不能赋值
+        // return Currying.curryingConsumer(iLog, this::log);
     }
 
     static void console(ILog iLog, LogLevel level, String message) throws Exception {
@@ -26,7 +26,7 @@ public interface ILogDecorator {
         iLog.log(level, String.format("[Thread: %s] %s", Thread.currentThread().getName(), message));
     }
 
-    static ILogDecorator filterLevel(LogLevel minLevel) throws Exception {
+    static ILogDecorator filterLevel(LogLevel minLevel) {
         return (iLog, level, message) -> {
             if (level.ordinal() >= minLevel.ordinal()) {
                 iLog.log(level, String.format("[%s] %s", level, message));

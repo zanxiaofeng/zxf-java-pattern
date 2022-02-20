@@ -24,11 +24,11 @@ public interface ILog {
         return returnLog;
     }
 
-    static void consoleLog(LogLevel level, String message) throws Exception {
+    static void consoleLog(LogLevel level, String message) {
         System.out.println(message);
     }
 
-    static ILog fileLog(Path logFile) throws Exception {
+    static ILog fileLog(Path logFile) {
         return (level, message) -> {
             Files.write(logFile, (message + "\n").getBytes(StandardCharsets.UTF_8), CREATE, APPEND);
         };
