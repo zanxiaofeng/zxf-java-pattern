@@ -2,7 +2,7 @@ package zxf.java.pattern.visitor;
 
 import java.util.Iterator;
 
-public class Visitor2 {
+public class ListVisitor2 {
     private String currentDir = "";
 
     public void visit(Entry entry) {
