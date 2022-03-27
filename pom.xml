@@ -17,6 +17,7 @@
         <module>templatemethod</module>
         <module>functional-base</module>
         <module>decorator</module>
+        <module>visitor</module>
     </modules>
 
     <dependencies>
